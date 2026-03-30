@@ -1,3 +1,9 @@
+name: Test Public Action
+
+on:
+  workflow_dispatch:
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
