@@ -1,0 +1,15 @@
+name: Test Action
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run public action
+        uses: juancamilo.nb/public-action@v1
+        with:
+          username: "juan"
+          image: "test.png"
+
