@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Run public action
-        uses: juancamilo-nb/public-action@v1
+        uses: juancamilo-nb/public-action/.github/workflows/public.yml@v1
         with:
           username: "juan"
           image: "test.png"
