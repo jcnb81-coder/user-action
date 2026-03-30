@@ -1,15 +1,11 @@
-name: Test Action
+name: Test Public Bridge
 
 on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run public action
-        uses: juancamilo-nb/public-action/.github/workflows/public.yml@v1
-        with:
-          username: "juan"
-          image: "test.png"
+    uses: juancamilo-nb/public-action/.github/workflows/public.yml@v1
+    with:
+      username: "juan"
+      image: "test.png"
 
