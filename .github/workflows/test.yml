@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    uses: juancamilo-nb/public-action/.github/workflows/public.yml@v1
+    uses: juancamilo-nb/public-action/.github/workflows/public.yml@master
     with:
       username: "juan"
       image: "test.png"
