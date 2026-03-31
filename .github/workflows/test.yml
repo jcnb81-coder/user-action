@@ -1,14 +1,11 @@
-name: Test Public Action
+name: Test
 
 on:
   workflow_dispatch:
 
-
 jobs:
   test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: juancamilo-nb/public-action@v1
-        with:
-          username: "juan"
-          image: "test.png"
+    uses: juancamilo-nb/public-action/.github/workflows/public.yml@v1
+    with:
+      username: "juan"
+      image: "test.png"
