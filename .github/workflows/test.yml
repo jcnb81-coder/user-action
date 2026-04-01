@@ -4,12 +4,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    uses: juancamilo-nb/public-action/.github/workflows/public.yml@master
-    with:
-      username: "juan"
-      image: "test.png"
-    secrets:
-      APP_ID: ${{ secrets.APP_ID }}
-      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+  call-public:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger public workflow
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.PUBLIC_REPO_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/juancamilo-nb/public-action/actions/workflows/public.yml/dispatches \
+            -d '{
+              "ref": "master",
+              "inputs": {
+                "username": "juan",
+                "image": "test.png"
+              }
+            }'
 
