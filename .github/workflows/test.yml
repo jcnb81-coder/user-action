@@ -9,16 +9,7 @@ jobs:
 
     steps:
       - name: Trigger public workflow
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.PUBLIC_REPO_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/juancamilo-nb/public-action/actions/workflows/public.yml/dispatches \
-            -d '{
-              "ref": "master",
-              "inputs": {
-                "username": "juan",
-                "image": "test.png"
-              }
-            }'
-
+        uses: juancamilo-nb/publicado@v1
+        with: 
+          username: "pancracio"
+          image: "tarcicio.png"
