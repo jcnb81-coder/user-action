@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Trigger public workflow
-        uses: juancamilo-nb/publicado@v1
+        uses: juancamilo-nb/publicado@v2
         with: 
           username: "pancracio"
           image: "tarcicio.png"
